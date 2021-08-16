@@ -1,20 +1,19 @@
 class Solution:
-    def backspaceCompare(self, s: str, t: str) -> bool:
-        
+    
+    def backspace(self, arg):
         result = []
-        result2 = []
         
-        for val in s:
+        for val in arg:
             if val != '#':
                 result.append(val)
             elif result:
                 result.pop()
         
-        for val in t:
-            if val != '#':
-                result2.append(val)
-            elif result2:
-                result2.pop()
+        return "".join(result)
+            
+        
+    def backspaceCompare(self, s: str, t: str) -> bool:
+        
                 
-        return "".join(result) == "".join(result2)
+        return self.backspace(s) == self.backspace(t)
         
