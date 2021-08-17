@@ -3,22 +3,19 @@ class Solution:
         
         result = ""
         
-        word1Pointer = 0
-        word2Pointer = 0
+        i = 0
         
-        while word1Pointer < len(word1) and word2Pointer < len(word2):
+        while i < len(word1) and i < len(word2):
             
-            result += word1[word1Pointer]
-            result += word2[word2Pointer]
-            word1Pointer += 1
-            word2Pointer += 1
-        
-        if word1Pointer < len(word1):
-            result += word1[word1Pointer:]
+            result += word1[i] + word2[i]
+            i += 1
+            
+        if i < len(word1):
+            result += word1[i:]
         
         
-        if word2Pointer < len(word2):
-            result += word2[word2Pointer:]
+        if i < len(word2):
+            result += word2[i:]
         
         
         return result
