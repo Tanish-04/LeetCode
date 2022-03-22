@@ -1,22 +1,18 @@
 class MyHashSet:
 
     def __init__(self):
-        self.array = []
+        self.hashset = set()
         
-
     def add(self, key: int) -> None:
-        self.array.append([key])
+        self.hashset.add(key)
 
     def remove(self, key: int) -> None:
         try:
-            while True:
-                self.array.remove([key])
-        except ValueError:
+            self.hashset.remove(key)
+        except:
             pass
-            
     def contains(self, key: int) -> bool:
-        
-        if [key] in self.array:
+        if key in self.hashset:
             return True
         
         return False
