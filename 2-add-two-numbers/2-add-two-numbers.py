@@ -6,6 +6,9 @@
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         
+        # Time Complexity O(n)
+        # Space Complexity O(n)
+        
         dummy = ListNode()
         node = dummy
         carry = 0
