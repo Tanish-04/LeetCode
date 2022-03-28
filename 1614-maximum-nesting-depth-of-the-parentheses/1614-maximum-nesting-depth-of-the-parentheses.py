@@ -3,13 +3,29 @@ class Solution:
         
         # Time Complexity O(n)
         # Space Complexity O(1)
-        maxDepth = depth = 0
+#         maxDepth = depth = 0
+        
+#         for i in s:
+#             if i == '(':
+#                 depth += 1
+#                 maxDepth = max(maxDepth,depth)
+#             elif i == ')':
+#                 depth -= 1
+        
+#         return maxDepth
+
+        # Using Stack
+        # Time Complexity O(n)
+        # Space Complexity O(n)
+    
+        stack = []
+        depth = 0
         
         for i in s:
             if i == '(':
-                depth += 1
-                maxDepth = max(maxDepth,depth)
+                stack.append(i)
+                depth = max(depth,len(stack))
             elif i == ')':
-                depth -= 1
-        
-        return maxDepth
+                stack.pop()
+                
+        return depth
