@@ -1,16 +1,22 @@
 class Solution:
     def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
         
-        nums = tickets 
-        time_sec = 0
-        least_tickets = nums[k]     
-	
-        for i in range(len(nums)):                  
-            if k < i and nums[i] >= least_tickets :       
-                time_sec += (least_tickets - 1)
-            elif nums[i] < least_tickets :                  
-                time_sec += nums[i]
-            else:                                            
-                time_sec += least_tickets
-			
-        return time_sec
+        # Time Complexity O(n)
+        # Space Complexity O(1)
+        time = 0
+        least = tickets[k]
+        
+        for i,value in enumerate(tickets):
+            if i > k and value >=least:
+                time += least-1
+                
+            elif value > least:
+                time += least
+            else:
+                time += value
+                
+        return time
+    
+        
+        
+        
