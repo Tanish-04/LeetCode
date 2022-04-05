@@ -38,7 +38,7 @@ class MyLinkedList:
         temp = self.head
         newNode = Node(val)
         
-        if index <= 0:
+        if index == 0:
             newNode.next = temp
             self.head = newNode
         else:
