@@ -4,68 +4,67 @@ class Node:
         self.next = None
 
 class MyLinkedList:
-
+    
+    # Time Complexity : O(n) 
+    # Space Complexity : O(1) 
     def __init__(self):
         self.head = None
-        self.count = 0
+        self.size = 0
         
 
     def get(self, index: int) -> int:
-        
-        if index < 0 or index >= self.count:
+        if index < 0 or index >= self.size:
             return -1
         
         current = self.head
+        
         for _ in range(0,index):
             current = current.next
         
         return current.val
-        
 
     def addAtHead(self, val: int) -> None:
-        
         self.addAtIndex(0,val)
+        
 
     def addAtTail(self, val: int) -> None:
-        
-        self.addAtIndex(self.count,val)
-        
+        self.addAtIndex(self.size,val)
+
     def addAtIndex(self, index: int, val: int) -> None:
         
-        if index > self.count:
-            return
-         
-        temp = self.head
+        
         newNode = Node(val)
+        if index > self.size:
+            return
+        
+        current = self.head
         
         if index == 0:
-            newNode.next = temp
+            newNode.next = current
             self.head = newNode
         else:
-            for _ in range(index-1):
-                temp = temp.next
-            newNode.next = temp.next
-            temp.next = newNode
-        self.count += 1
+            for i in range(index-1):
+                current = current.next
+            newNode.next = current.next
+            current.next = newNode
             
+        self.size += 1
         
-
     def deleteAtIndex(self, index: int) -> None:
-        if index < 0 or index >= self.count:
-            return -1
         
-        temp = self.head
+        if index < 0 or index >= self.size:
+            return
+        
+        current = self.head
         
         if index == 0:
             self.head = self.head.next
         else:
-            for _ in range(0,index-1):
-                temp = temp.next
-            temp.next = temp.next.next
-        self.count -= 1
-        
-        
-        
+            for _ in range(index-1):
+                current = current.next
+            current.next = current.next.next
+            
+        self.size -= 1
         
 
 
