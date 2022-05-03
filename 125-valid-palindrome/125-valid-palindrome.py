@@ -1,6 +1,10 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         
+        
+        # Time Complexity O(n)
+        # Space Complexity O(1)
+        
         start = 0
         end = len(s)-1
         
