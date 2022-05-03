@@ -1,8 +1,15 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         
-#         if len(s) != len(t):
-#             return False
+        '''
+        Time Complexity(n+n+n => 3n => n)
+        Space Complexity(n)
+        Approach:
+        Store str s into dictionary, and then use that dictionary to check 
+        t value if doesn't exist stop there if exist -1 it's value so that
+        at the end we can check if all values of key are 0 then it's anagram
+        otherwise it's not
+        '''
         
         storedAnagram = dict()
         
