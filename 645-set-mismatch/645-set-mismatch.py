@@ -2,8 +2,8 @@ class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
          
         # Find repeated and missing one
-        repeated = -1
-        missing = 1
+        repeated = 0
+        missing = 0
         # Declaring new array
         newArray = [0] * (len(nums) + 1)
         
