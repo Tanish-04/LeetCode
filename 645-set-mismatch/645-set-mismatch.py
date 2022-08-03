@@ -1,6 +1,12 @@
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
          
+        # Breaking the question into steps:
+        # Assign count of every element into new Array starting value in new array from index 1
+        # Find out count 2 and 0 for missing and duplicate value
+        
+            
+            
         # Find repeated and missing one
         repeated = 0
         missing = 0
