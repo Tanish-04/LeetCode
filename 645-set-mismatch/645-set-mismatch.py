@@ -18,8 +18,8 @@ class Solution:
             elif newArray[i] == 0:
                 missing = i
         
-#             if duplicated != 0 and missing != 0:
-#                 break
+            if duplicated != 0 and missing != 0:
+                break
         
         
         return duplicated,missing
