@@ -19,7 +19,8 @@ class Solution:
             else:
                 right = mid
         
-        return left-1
+        
+        return right-1
             
         
         
