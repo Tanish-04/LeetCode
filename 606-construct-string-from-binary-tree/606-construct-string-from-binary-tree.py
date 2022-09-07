@@ -7,21 +7,27 @@
 class Solution:
     def tree2str(self, root: Optional[TreeNode]) -> str:
         
-        if root == None:
-            return ""
-        
-        if root.left == None and root.right == None:
-            return str(root.val)
-        
-        if root.right == None:
-            return str(root.val) + "(" + self.tree2str(root.left) + ")"
-        
-        
-        return str(root.val) + "(" + self.tree2str(root.left) + ")(" + self.tree2str(root.right) + ")"
-        
         
         
         # preorder traversal    1,2,4,3
         # postorder traversal   4,2,3,1
         # inorder traversal     4,2,1,3
+
+        if root == None:
+            return ""
+        
+        
+        # when left and right doesn't exist
+        if root.left == None and root.right == None:
+            return str(root.val)
+        
+        # left exist but right doesn't
+        if root.right == None:
+            return str(root.val) + "(" + self.tree2str(root.left) + ")"
+        
+        # when left and right exist
+        return str(root.val) + "(" + self.tree2str(root.left) + ")(" + self.tree2str(root.right) + ")"
+        
+        
+        
         
