@@ -6,12 +6,16 @@
 #         self.right = right
 class Solution:
     def tree2str(self, root: Optional[TreeNode]) -> str:
+        
         if root == None:
             return ""
-        if (root.left == None and root.right == None):
+        
+        if root.left == None and root.right == None:
             return str(root.val)
-        if (root.right == None):
+        
+        if root.right == None:
             return str(root.val) + "(" + self.tree2str(root.left) + ")"
+        
         
         return str(root.val) + "(" + self.tree2str(root.left) + ")(" + self.tree2str(root.right) + ")"
         
