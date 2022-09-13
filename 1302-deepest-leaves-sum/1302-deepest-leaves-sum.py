@@ -27,7 +27,7 @@ class Solution:
         
         return self.Sum
         
-        
+            
     def deepestLeavesSum(self, root):
         height = self.getHeight(root)
         self.getSum(root, height - 1)
