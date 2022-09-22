@@ -18,7 +18,7 @@ class Solution:
         if not top <= bottom:
             return False
         
-        row = (top + bottom) // 2
+        # row = (top + bottom) // 2
         l,r = 0, COLS-1
         while l <= r:
             m = (l + r) // 2
