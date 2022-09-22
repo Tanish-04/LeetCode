@@ -3,12 +3,14 @@ class Solution:
         
         # Time Complexity O(n)
         # Space Complexity O(n)
-        ans, s = [0]*len(T), deque()
-        for cur, cur_tmp in enumerate(T):
-            while s and cur_tmp > T[s[-1]]:
-                ans[s[-1]] = cur - s[-1]
-                s.pop()
-            s.append(cur)
+        
+        ans, stack = [0]*len(T), deque()
+        
+        for index, temp in enumerate(T):
+            while stack and temp > T[stack[-1]]:
+                ans[stack[-1]] = index - stack[-1]
+                stack.pop()
+            stack.append(index)
         return ans
 
 
