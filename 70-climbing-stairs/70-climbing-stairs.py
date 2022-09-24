@@ -1,15 +1,19 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
         
-        result = [0] * (n+1)
         
-        result[0] = 1
-        result[1] = 1
+        firstNumber = 1
+        secondNumber = 1
+        if n == 1:
+            return firstNumber
         
+        result = firstNumber + secondNumber
         for i in range(2,n+1):
-            result[i] = result[i-1] + result[i-2]
+            result = firstNumber + secondNumber
+            firstNumber = secondNumber
+            secondNumber = result
             
-        return result[n]
+        return result
     
     
     
